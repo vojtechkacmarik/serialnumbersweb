@@ -1,0 +1,6 @@
+﻿{
+  "Timeouts": {
+    "ApplicationTimeout": "150",
+    "DatabaseTimeout": "150"
+  }
+}

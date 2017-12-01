@@ -1,0 +1,61 @@
+﻿@using System.Collections.Generic
+@using System.Linq
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http.Authentication
+@using SerialNumbers.Web.Models
+@using SerialNumbers.Web.Models.SerialNumbersViewModels
+@model SerialNumbers.Web.Models.SerialNumbersViewModels.CreateSchemaViewModel
+
+@{
+    ViewData["Title"] = "Create Schema";
+}
+
+<h2>@ViewData["Title"]</h2>
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+                <h4>Please fill in following parameters to create schema.</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Schema"></label>
+                    <input asp-for="Schema" class="form-control" />
+                    <span asp-validation-for="Schema" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Customer"></label>
+                    <input asp-for="Customer" class="form-control" />
+                    <span asp-validation-for="Customer" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Mask"></label>
+                    <input asp-for="Mask" class="form-control" />
+                    <span asp-validation-for="Mask" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Seed"></label>
+                    <input asp-for="Seed" class="form-control" />
+                    <span asp-validation-for="Seed" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Increment"></label>
+                    <input asp-for="Increment" class="form-control" />
+                    <span asp-validation-for="Increment" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">Create</button>
+                </div>
+                <div class="form-group">
+                    <p>
+                        You can see details in <a href="https://github.com/vojtechkacmarik/serialnumbers">GitHub</a>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
